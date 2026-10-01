@@ -1,0 +1,17 @@
+name: Formula
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: brew tap mrsk-cli/tap "$GITHUB_WORKSPACE"
+      - run: cp Formula/mrsk.rb "$(brew --repository mrsk-cli/tap)/Formula/mrsk.rb"
+      - run: brew audit --strict --formula mrsk-cli/tap/mrsk
+      - run: brew install --build-from-source mrsk-cli/tap/mrsk
+      - run: brew test mrsk-cli/tap/mrsk
