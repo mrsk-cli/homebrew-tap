@@ -2,7 +2,7 @@ class Mrsk < Formula
   desc "Manage Git worktrees beside a configured main checkout"
   homepage "https://github.com/mrsk-cli/mrsk"
   url "https://github.com/mrsk-cli/mrsk/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c9b7ccc6f3612f40d4d160ea4cc690806f7265b22718e8bdd6ccf809c181d505"
+  sha256 "79ad2980ecc786ce3a9f980875919bc3b5006f399551c6cc2f3b2d71a47afe33"
   license "MIT"
 
   depends_on "open-code-review"
